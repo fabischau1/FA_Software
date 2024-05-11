@@ -38,7 +38,7 @@
             color: #ffffff;
             text-decoration: none;
             padding: 10px;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease;
         }
         
         nav li a:hover {
@@ -60,6 +60,11 @@
             margin-bottom: 20px;
             width: 80%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
         }
         
         section h2 {
@@ -71,6 +76,19 @@
         
         section h2:hover {
             color: #008cba;
+            animation: heartbeat 1s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
         
         section p {
