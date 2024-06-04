@@ -1,253 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FA & FM Software</title>
+    <title>FM Browser</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            background-image: url('1.jpg');
+            background-size: cover;
+            background-position: center;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            color: #f9f9f9;
         }
-        
-        header {
-            background-color: #343a40;
-            color: #ffffff;
+
+        .header {
+            background-color: #121212;
+            color: #f9f9f9;
+            text-align: center;
+            padding: 40px 20px;
+            animation: slideInDown 1s ease-out;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 50px auto;
             padding: 20px;
-            text-align: center;
-        }
-        
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            background-color: #343a40;
-            overflow: hidden;
-            text-align: center;
-        }
-        
-        nav li {
-            display: inline;
-            margin-right: 20px;
-        }
-        
-        nav li a {
-            display: inline-block;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px;
-            transition: background-color 0.3s ease;
-        }
-        
-        nav li a:hover {
-            background-color: #666666;
+            background-color: #121212;
             border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+            animation: slideInUp 1s ease-out;
         }
-        
-        main {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin: 10px;
+            background-image: url('logo.png');
+            background-size: contain;
+            background-position: center;
+            border-radius: 50%;
         }
-        
-        section {
-            background-color: #ffffff;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
+
+        .search-bar {
             width: 80%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            padding: 10px;
+            border: 1px solid #4285f4;
+            border-radius: 3px;
+            font-size: 16px;
+            margin: 20px auto;
+            transition: background-color 0.3s ease;
+            color: #f9f9f9;
         }
-        
-        section:hover {
-            transform: translateY(-5px);
+
+        .search-bar:focus {
+            outline: none;
+            background-color: #333;
         }
-        
-        section h2 {
-            color: #343a40;
+
+        .search-bar::placeholder {
+            color: #ccc;
+        }
+
+        .password-generator,
+        .url-scanner {
+            margin-top: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .password-generator h3,
+        .url-scanner h3 {
+            color: #4285f4;
             margin-top: 0;
-            cursor: pointer; 
-            transition: color 0.3s ease;
         }
-        
-        section h2:hover {
-            color: #008cba;
-            animation: heartbeat 1s infinite;
+
+        .password-generator input[type="text"] {
+            background-color: #333;
+            border: none;
+            color: #f9f9f9;
+            width: 80%;
+            padding: 10px;
+            margin: 20px auto;
         }
-        
-        @keyframes heartbeat {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
+
+        .url-scanner input[type="text"] {
+            background-color: #333;
+            border: none;
+            color: #f9f9f9;
+            width: 80%;
+            padding: 10px;
+            margin: 20px auto;
         }
-        
-        section p {
-            color: #343a40;
+
+        .url-scanner button {
+            background-color: #4285f4;
+            color: #f9f9f9;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 20px auto;
+            font-size: 18px;
         }
-        
-        footer {
-            background-color: #343a40;
-            color: #ffffff;
-            padding: 10px 20px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+
+        .url-scanner button:hover {
+            background-color: #212121;
+        }
+
+        .password-generator button {
+            background-color: #4285f4;
+            color: #f9f9f9;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 20px auto;
+            font-size: 18px;
+        }
+
+        .password-generator button:hover {
+            background-color: #212121;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to the FA & FM Software Website!</h1>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="#main">FA AntiVira</a></li>
-            <li><a href="#browser">FM Browser</a></li>
-            <li><a href="#sec">FA AntiVira Download Real Time Protection</a></li>
-			<li><a href="#html">FA AntiVira HTML</a></li>
-			<li><a href="#prot">FAprotection</a></li>
-			<li><a href="#wiki">FA AntiVira Wiki</a></li>
-			<li><a href="#cmd">Better Cmd.exe</a></li>
-			<li><a href="#task">FM TaskPro</a></li>
-			<li><a href="#github">GitHub</a></li>
-			<li><a href="#discord">FA AntiVira Discord</a></li>
-        </ul>
-    </nav>
+    <div class="header">
+        <div class="logo"></div>
+        <h1>Welcome to the FM Browser</h1>
+    </div>
+    <div class="content">
+        <form method="get" action="https://www.google.de/search" target="_blank">
+            <input class="search-bar" name="q" type="text" size="45" maxlength="255" placeholder="Search with Google" />
+            <input type="submit" value="Search" style="padding: 15px 30px; font-size: 18px;" />
+        </form>
+        <div class="password-generator">
+            <h3>Password Generator</h3>
+            <button onclick="generatePassword()">Generate Password</button>
+            <input type="text" id="password" readonly>
+        </div>
+        <div class="url-scanner">
+            <h3>URL Scanner</h3>
+            <input type="text" id="urlInput" placeholder="Type in a url">
+            <button onclick="scanUrl()">Scan</button>
+            <p id="scanResult"></p>
+        </div>
+		<div>
+		<h3><a href="https://fabischau1.github.io/FA_Software/">Click Here To Install Other Programms From fabischau</a></h3>
+		</div>
+    </div>
 
-    <main>
-        <section id="main">
-            <h2><a href="https://ufile.io/6hdkl0v4">FA Antivira v.1.5</a></h2>
-            <p>FA Antivira v.1.5 is available for Windows 10, 11. Its Features are:</p>
-            <ul>
-                <li>URL Scan</li>
-                <li>Password Generator</li>
-                <li>Super Password Generator</li>
-				<li>Quick Scan</li>
-				<li>Open your Anti Virus</li>
-				<li>Helps you Repair Damaged System Files</li>
-				<li>Start Menu</li>
-				<li>URL Database with over 700 links</li>
-				<li>File Killer</li>
-				<li>Single File Scanner</li>
-				<li>Database with over 771000 malware hashes</li>
-				<li>Python user interface that requires python</li>
-				<li>Vbs user interface. it uses that if you dont have python</li>
-				<li>Programm Manager</li>
-				<li>Firewall Manager</li>
-				<li>Conection And Info Manager</li>
-				<li>Scan for A Damaged System</li>
-				<li>Check and Repair File System Errors</li>
-				<li>Clean Temporary Files</li>
-				<li>Defragment the Hard Drive</li>
-				<li>Run Performance Monitoring and Diagnostics</li>
-				<li>Scan Multible files</li>
-				<li>Virus Total Scanns (requires Virus Total API)</li>
-				<li>Simple Quarantene</li>
-				<li>Batch Code Scanning</li>
-		    		<li>Quarantine</li>
-		    		<li>Signature Based Detection</li>
-            </ul>
-        </section>
+    <script>
+        function generatePassword() {
+            var length = 14;
+            var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var password = "";
+            for (var i = 0; i < length; i++) {
+                password += charset.charAt(Math.floor(Math.random() * charset.length));
+            }
+            document.getElementById("password").value = password;
+        }
 
-        <section id="browser">
-            <h2><a href="https://ufile.io/id0187a5">FM Browser</a></h2>
-            <p>FM Browser is available for all Operating Systems</p>
-			<ul>
-				<li>Password Generator</li>
-				<li>Famous Websides</li>
-				<li>Customizable Backrounds</li>
-				<li>URL-Scanners</li>
-				<li>Google Search</li>
-			<ul>
-        </section>
-
-        <section id="sec">
-            <h2><a href="https://ufile.io/e9tamb4r">FA AntiVira Download Real Time Protection</a></h2>
-            <p>FA AntiVira Download Real Time Protection is available for Windows 10, 11. Its Features are:</p>
-			<ul>
-				<li>Watches if a something gets downloaded</li>
-				<li>scanns everything that gets downloaded</li>
-				<li>Note: This May get Blocked by your Anti Virus bc the file is not singed</li>
-			<ul>
-        </section>
-
-        <section id="html">
-            <h2><a href="https://ufile.io/yjs9feeh">FA Antivira html</a></h2>
-            <p>FA Antivira html is available for all Operating Systems and its Features are:</p>
-			<ul>
-				<li>Super Secure And Accurate Password Generator</li>
-			<ul>
-        </section>
-		
-        <section id="prot">
-            <h2><a href="https://ufile.io/zkdkmave">FAprotection</a></h2>
-            <p>FAprotection.exe Features are:</p>
-			<ul>
-				<li>Watching System32 for Deleted or Created Files</li>
-				<li>Note: This May get Blocked by your Anti Virus bc the file is not singed</li>
-			<ul>
-        </section>
-		
-		<section id="wiki">
-            <h2><a href="https://github.com/fabischau1/FAAntivira/wiki/FA-AntiVira">FA AntiVira Wiki</a></h2>
-            <p>On the FA Antivira wiki you can see:</p>
-			<ul>
-				<li>More info about FA Antivira</li>
-				<li>How to install FA Antivira</li>
-				<li>How to Delete FA Antivira</li>
-				<li>More info about the author of FA Antivira</li>
-				<li>Screenshots of FA Antivira</li>
-			<ul>
-        </section>
-		
-		<section id="cmd">
-            <h2><a href="https://ufile.io/xucqy4ek">Better CMD</a></h2>
-            <p>Better CMD is an Upgradet Version of Cmd.exe:</p>
-			<ul>
-				<li>Green Color</li>
-				<li>Easy opening of websides</li>
-				<li>Cool Dising</li>
-			<ul>
-        </section>
-		
-		<section id="task">
-            <h2><a href="https://ufile.io/79oe8ihs">FM TaskPro</a></h2>
-            <p>FM TaskPro can do many cool things like:</p>
-			<ul>
-				<li>show the weather</li>
-				<li>create a QR code</li>
-				<li>unshorten or shorten a link</li>
-				<li>check if a webside is online</li>
-				<li>show all the wifis you have been connected to</li>
-				<li>hide a .zip folder inside of an image</li>
-				<li>find the latest Video of a youtuber</li>
-				<li>get quick disk space</li>
-			<ul>
-        </section>
-		
-		<section id="github">
-            <h2><a href="https://github.com/fabischau1/">My GitHub</a></h2>
-        </section>
-		
-		<section id="discord">
-            <h2><a href="https://discord.gg/B9j2mXsdhn">FA AntiVira Discord</a></h2>
-        </section>
-    </main>
-
-    <footer>
-        <p>2024 FA & FM Software</p>
-    </footer>
+        function scanUrl() {
+            var url = document.getElementById("urlInput").value;
+            if (url.startsWith("http://")) {
+                document.getElementById("scanResult").innerText = "Die URL '" + url + "' has unsafe data transfer.";
+            } else if (url.startsWith("https://")) {
+                document.getElementById("scanResult").innerText = "Die URL '" + url + "' has safe data transfer.";
+            } else {
+                document.getElementById("scanResult").innerText = "The URL is not available.";
+            }
+        }
+    </script>
 </body>
 </html>
