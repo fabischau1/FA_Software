@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0041)https://fabischau1.github.io/FA_Software/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FA &amp; FM Software</title>
     <style>
@@ -104,151 +104,238 @@
             bottom: 0;
             width: 100%;
         }
+        
+        .denied {
+            background-color: black;
+            color: red;
+            font-size: 24px;
+            text-align: center;
+            padding: 50px;
+        }
     </style>
-<style type="text/css"></style><style type="text/css" id="operaUserStyle"></style></head>
+</head>
 <body>
-    <header>
-        <h1>Welcome to the FA &amp; FM Software Website!</h1>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="https://fabischau1.github.io/FA_Software/#main">FA AntiVira</a></li>
-            <li><a href="https://fabischau1.github.io/FA_Software/#browser">FM Browser</a></li>
-            <li><a href="https://fabischau1.github.io/FA_Software/#sec">FA AntiVira Download Real Time Protection</a></li>
-			<li><a href="https://fabischau1.github.io/FA_Software/#html">FA AntiVira HTML</a></li>
-			<li><a href="https://fabischau1.github.io/FA_Software/#prot">FAprotection</a></li>
-			<li><a href="https://fabischau1.github.io/FA_Software/#wiki">FA AntiVira Wiki</a></li>
-			<li><a href="https://fabischau1.github.io/FA_Software/#cmd">Better Cmd.exe</a></li>
-			<li><a href="https://fabischau1.github.io/FA_Software/#task">FM TaskPro</a></li>
-			<li><a href="https://fabischau1.github.io/FA_Software/#github">GitHub</a></li>
-			<li><a href="https://fabischau1.github.io/FA_Software/#discord">FA AntiVira Discord</a></li>
-        </ul>
-    </nav>
+    <div id="content">
+        Checking your IP address...
+    </div>
+    <script>
+        // List of banned IP addresses
+        const bannedIPs = [
+            '86.33.79.227',
+            '...',
+            '77.111.246.126'
+        ];
 
-    <main>
-        <section id="main">
-            <h2><a href="https://ufile.io/6hdkl0v4">FA Antivira v.1.5</a></h2>
-            <p>FA Antivira v.1.5 is available for Windows 10, 11. Its Features are:</p>
-            <ul>
-                <li>URL Scan</li>
-                <li>Password Generator</li>
-                <li>Super Password Generator</li>
-				<li>Quick Scan</li>
-				<li>Open your Anti Virus</li>
-				<li>Helps you Repair Damaged System Files</li>
-				<li>Start Menu</li>
-				<li>URL Database with over 700 links</li>
-				<li>File Killer</li>
-				<li>Single File Scanner</li>
-				<li>Database with over 771000 malware hashes</li>
-				<li>Python user interface that requires python</li>
-				<li>Vbs user interface. it uses that if you dont have python</li>
-				<li>Programm Manager</li>
-				<li>Firewall Manager</li>
-				<li>Conection And Info Manager</li>
-				<li>Scan for A Damaged System</li>
-				<li>Check and Repair File System Errors</li>
-				<li>Clean Temporary Files</li>
-				<li>Defragment the Hard Drive</li>
-				<li>Run Performance Monitoring and Diagnostics</li>
-				<li>Scan Multible files</li>
-				<li>Virus Total Scanns (requires Virus Total API)</li>
-				<li>Simple Quarantene</li>
-				<li>Batch Code Scanning</li>
-		    		<li>Quarantine</li>
-		    		<li>Signature Based Detection</li>
-            </ul>
-        </section>
+        // Function to get the user's IP address
+        async function getUserIP() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                return data.ip;
+            } catch (error) {
+                console.error('Error fetching the IP address:', error);
+                return null;
+            }
+        }
 
-        <section id="browser">
-            <h2><a href="https://ufile.io/id0187a5">FM Browser</a></h2>
-            <p>FM Browser is available for all Operating Systems</p>
-			<ul>
-				<li>Password Generator</li>
-				<li>Famous Websides</li>
-				<li>Customizable Backrounds</li>
-				<li>URL-Scanners</li>
-				<li>Google Search</li>
-			<ul>
-        </ul></ul></section>
+        // Main function to check IP and update the page
+        async function checkIP() {
+            const userIP = await getUserIP();
+            if (userIP && bannedIPs.includes(userIP)) {
+                document.body.innerHTML = '<div class="denied">Access denied. You got banned from this website and are not allowed on here.</div>';
+            } else {
+                // If not banned, show the main content
+                document.body.innerHTML = `
+                    <header>
+                        <h1>Welcome to the FA &amp; FM Software Website!</h1>
+                    </header>
+                    
+                    <nav>
+                        <ul>
+                            <li><a href="#main">FA AntiVira</a></li>
+                            <li><a href="#browser">FM Browser</a></li>
+                            <li><a href="#sec">FA AntiVira Download Real Time Protection</a></li>
+                            <li><a href="#html">FA AntiVira HTML</a></li>
+                            <li><a href="#prot">FAprotection</a></li>
+                            <li><a href="#wiki">FA AntiVira Wiki</a></li>
+                            <li><a href="#cmd">Better Cmd.exe</a></li>
+                            <li><a href="#task">FM TaskPro</a></li>
+                            <li><a href="#github">GitHub</a></li>
+                            <li><a href="#discord">FA AntiVira Discord</a></li>
+                        </ul>
+                    </nav>
 
-        <section id="sec">
-            <h2><a href="https://ufile.io/e9tamb4r">FA AntiVira Download Real Time Protection</a></h2>
-            <p>FA AntiVira Download Real Time Protection is available for Windows 10, 11. Its Features are:</p>
-			<ul>
-				<li>Watches if a something gets downloaded</li>
-				<li>scanns everything that gets downloaded</li>
-				<li>Note: This May get Blocked by your Anti Virus bc the file is not singed</li>
-			<ul>
-        </ul></ul></section>
+                    <main>
+                        <section id="main">
+                            <h2><a href="https://ufile.io/6hdkl0v4">FA Antivira v.1.5</a></h2>
+                            <p>FA Antivira v.1.5 is available for Windows 10, 11. Its Features are:</p>
+                            <ul>
+                                <li>URL Scan</li>
+                                <li>Password Generator</li>
+                                <li>Super Password Generator</li>
+                                <li>Quick Scan</li>
+                                <li>Open your Anti Virus</li>
+                                <li>Helps you Repair Damaged System Files</li>
+                                <li>Start Menu</li>
+                                <li>URL Database with over 700 links</li>
+                                <li>File Killer</li>
+                                <li>Single File Scanner</li>
+                                <li>Database with over 771000 malware hashes</li>
+                                <li>Python user interface that requires python</li>
+                                <li>Vbs user interface. it uses that if you dont have python</li>
+                                <li>Programm Manager</li>
+                                <li>Firewall Manager</li>
+                                <li>Conection And Info Manager</li>
+                                <li>Scan for A Damaged System</li>
+                                <li>Check and Repair File System Errors</li>
+                                <li>Clean Temporary Files</li>
+                                <li>Defragment the Hard Drive</li>
+                                <li>Run Performance Monitoring and Diagnostics</li>
+                                <li>Scan Multible files</li>
+                                <li>Virus Total Scanns (requires Virus Total API)</li>
+                                <li>Simple Quarantene</li>
+                                <li>Batch Code Scanning</li>
+                                <li>Quarantine</li>
+                                <li>Signature Based Detection</li>
+                            </ul>
+                        </section>
 
-        <section id="html">
-            <h2><a href="https://ufile.io/yjs9feeh">FA Antivira html</a></h2>
-            <p>FA Antivira html is available for all Operating Systems and its Features are:</p>
-			<ul>
-				<li>Super Secure And Accurate Password Generator</li>
-			<ul>
-        </ul></ul></section>
-		
-        <section id="prot">
-            <h2><a href="https://ufile.io/zkdkmave">FAprotection</a></h2>
-            <p>FAprotection.exe Features are:</p>
-			<ul>
-				<li>Watching System32 for Deleted or Created Files</li>
-				<li>Note: This May get Blocked by your Anti Virus bc the file is not singed</li>
-			<ul>
-        </ul></ul></section>
-		
-		<section id="wiki">
-            <h2><a href="https://github.com/fabischau1/FAAntivira/wiki/FA-AntiVira">FA AntiVira Wiki</a></h2>
-            <p>On the FA Antivira wiki you can see:</p>
-			<ul>
-				<li>More info about FA Antivira</li>
-				<li>How to install FA Antivira</li>
-				<li>How to Delete FA Antivira</li>
-				<li>More info about the author of FA Antivira</li>
-				<li>Screenshots of FA Antivira</li>
-			<ul>
-        </ul></ul></section>
-		
-		<section id="cmd">
-            <h2><a href="https://ufile.io/xucqy4ek">Better CMD</a></h2>
-            <p>Better CMD is an Upgradet Version of Cmd.exe:</p>
-			<ul>
-				<li>Green Color</li>
-				<li>Easy opening of websides</li>
-				<li>Cool Dising</li>
-			<ul>
-        </ul></ul></section>
-		
-		<section id="task">
-            <h2><a href="https://ufile.io/79oe8ihs">FM TaskPro</a></h2>
-            <p>FM TaskPro can do many cool things like:</p>
-			<ul>
-				<li>show the weather</li>
-				<li>create a QR code</li>
-				<li>unshorten or shorten a link</li>
-				<li>check if a webside is online</li>
-				<li>show all the wifis you have been connected to</li>
-				<li>hide a .zip folder inside of an image</li>
-				<li>find the latest Video of a youtuber</li>
-				<li>get quick disk space</li>
-			<ul>
-        </ul></ul></section>
-		
-		<section id="github">
-            <h2><a href="https://github.com/fabischau1/">My GitHub</a></h2>
-        </section>
-		
-		<section id="discord">
-            <h2><a href="https://discord.gg/B9j2mXsdhn">FA AntiVira Discord</a></h2>
-        </section>
-    </main>
+                        <section id="browser">
+                            <h2><a href="https://ufile.io/id0187a5">FM Browser</a></h2>
+                            <p>FM Browser is available for all Operating Systems</p>
+                            <ul>
+                                <li>Password Generator</li>
+                                <li>Famous Websides</li>
+                                <li>Customizable Backrounds</li>
+                                <li>URL-Scanners</li>
+                                <li>Google Search</li>
+                            </ul>
+                        </section>
 
-    <footer>
-        <p>2024 FA &amp; FM Software</p>
-    </footer>
+                        <section id="sec">
+                            <h2><a href="https://ufile.io/e9tamb4r">FA AntiVira Download Real Time Protection</a></h2>
+                            <p>FA AntiVira Real Time Protection is available for Windows 10, 11. Its Features are:</p>
+                            <ul>
+                                <li>Real Time Protection</li>
+                                <li>URL Scan</li>
+                                <li>Password Generator</li>
+                                <li>Super Password Generator</li>
+                                <li>Quick Scan</li>
+                                <li>Open your Anti Virus</li>
+                                <li>Helps you Repair Damaged System Files</li>
+                                <li>Start Menu</li>
+                                <li>URL Database with over 700 links</li>
+                                <li>File Killer</li>
+                                <li>Single File Scanner</li>
+                                <li>Database with over 771000 malware hashes</li>
+                                <li>Python user interface that requires python</li>
+                                <li>Vbs user interface. it uses that if you dont have python</li>
+                                <li>Programm Manager</li>
+                                <li>Firewall Manager</li>
+                                <li>Conection And Info Manager</li>
+                                <li>Scan for A Damaged System</li>
+                                <li>Check and Repair File System Errors</li>
+                                <li>Clean Temporary Files</li>
+                                <li>Defragment the Hard Drive</li>
+                                <li>Run Performance Monitoring and Diagnostics</li>
+                                <li>Scan Multible files</li>
+                                <li>Virus Total Scanns (requires Virus Total API)</li>
+                                <li>Simple Quarantene</li>
+                                <li>Batch Code Scanning</li>
+                                <li>Quarantine</li>
+                                <li>Signature Based Detection</li>
+                            </ul>
+                        </section>
 
+                        <section id="html">
+                            <h2><a href="https://ufile.io/6hdkl0v4">FA AntiVira HTML</a></h2>
+                            <p>FA AntiVira HTML is available for all Operating Systems</p>
+                            <ul>
+                                <li>Password Generator</li>
+                                <li>Famous Websides</li>
+                                <li>Customizable Backrounds</li>
+                                <li>URL-Scanners</li>
+                                <li>Google Search</li>
+                            </ul>
+                        </section>
 
-</body></html>
+                        <section id="prot">
+                            <h2><a href="https://ufile.io/e9tamb4r">FAprotection</a></h2>
+                            <p>FAprotection is available for Windows 10, 11. Its Features are:</p>
+                            <ul>
+                                <li>Real Time Protection</li>
+                                <li>URL Scan</li>
+                                <li>Password Generator</li>
+                                <li>Super Password Generator</li>
+                                <li>Quick Scan</li>
+                                <li>Open your Anti Virus</li>
+                                <li>Helps you Repair Damaged System Files</li>
+                                <li>Start Menu</li>
+                                <li>URL Database with over 700 links</li>
+                                <li>File Killer</li>
+                                <li>Single File Scanner</li>
+                                <li>Database with over 771000 malware hashes</li>
+                                <li>Python user interface that requires python</li>
+                                <li>Vbs user interface. it uses that if you dont have python</li>
+                                <li>Programm Manager</li>
+                                <li>Firewall Manager</li>
+                                <li>Conection And Info Manager</li>
+                                <li>Scan for A Damaged System</li>
+                                <li>Check and Repair File System Errors</li>
+                                <li>Clean Temporary Files</li>
+                                <li>Defragment the Hard Drive</li>
+                                <li>Run Performance Monitoring and Diagnostics</li>
+                                <li>Scan Multible files</li>
+                                <li>Virus Total Scanns (requires Virus Total API)</li>
+                                <li>Simple Quarantene</li>
+                                <li>Batch Code Scanning</li>
+                                <li>Quarantine</li>
+                                <li>Signature Based Detection</li>
+                            </ul>
+                        </section>
+
+                        <section id="wiki">
+                            <h2><a href="https://github.com/FA-AntiVira/FA-AntiVira/wiki">FA AntiVira Wiki</a></h2>
+                            <p>Learn more about FA AntiVira and its features on our wiki.</p>
+                        </section>
+
+                        <section id="cmd">
+                            <h2><a href="https://ufile.io/6hdkl0v4">Better Cmd.exe</a></h2>
+                            <p>Better Cmd.exe is available for Windows 10, 11.</p>
+                            <ul>
+                                <li>Customizable Backrounds</li>
+                                <li>URL-Scanners</li>
+                                <li>Google Search</li>
+                            </ul>
+                        </section>
+
+                        <section id="task">
+                            <h2><a href="https://ufile.io/e9tamb4r">FM TaskPro</a></h2>
+                            <p>FM TaskPro is available for all Operating Systems.</p>
+                            <ul>
+                                <li>Password Generator</li>
+                                <li>Famous Websides</li>
+                                <li>Customizable Backrounds</li>
+                                <li>URL-Scanners</li>
+                                <li>Google Search</li>
+                            </ul>
+                        </section>
+
+                        <section id="github">
+                            <h2><a href="https://github.com/FA-AntiVira">FA AntiVira on GitHub</a></h2>
+                            <p>Check out our GitHub repository for the latest updates and source code.</p>
+                        </section>
+
+                        <section id="discord">
+                            <h2><a href="https://discord.gg/FA-AntiVira">FA AntiVira Discord</a></h2>
+                            <p>Join our Discord server to connect with other users and get support.</p>
+                        </section>
+                    </main>
+                `;
+            }
+        }
+
+        // Call the main function
+        checkIP();
+    </script>
+</body>
